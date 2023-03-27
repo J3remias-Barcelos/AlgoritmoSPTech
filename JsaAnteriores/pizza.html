@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Javascript 2</title>
+
+    <!-- <link rel="stylesheet" href="./style_pizza.css" /> -->
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :root {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    font-family: "Rubik", sans-serif;
+    letter-spacing: -0.02em;
+  
+    background: linear-gradient(167.96deg, #8257e5 0%, #271a45 100%) no-repeat
+      fixed;
+  
+    height: 100vh;
+    display: grid;
+    place-content: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: rgb(100, 96, 96);
+    text-align: center;
+  }
+  
+  section {
+    padding: 2.4rem 3.2rem;
+    border-radius: 2.2rem;
+  
+    background-color: white;
+  
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+  }
+
+.inputs {
+    gap: 1.1rem;
+  }
+  
+  input {
+    padding: 4px;
+    margin-left: 6px;
+    align-items: center;
+    border-radius: 0.6rem;
+    border: 2px solid #ccc;
+    font-family: "Rubik", sans-serif;
+    color: #4c4c50;
+
+}
+
+.bottom {
+     border: 1px solid #CCCCCE;
+     border-radius: 3px;
+     box-shadow: 0 3px 0 rgba(0, 0, 0, .3),
+                   0 2px 7px rgba(0, 0, 0, 0.2);
+     color: #616165;
+     display: block;
+     font-family: "Rubik";
+     font-size: 14px;
+     font-weight: bold;
+     line-height: 25px;
+     text-align: center;
+     text-decoration: none;
+     text-transform: uppercase;
+     text-shadow:1px 1px 0 #FFF;
+     padding: 5px 15px;
+     position: relative;
+  }
+    </style>
+</head>
+
+<body>
+
+    <section class="">
+        <h1 class="h1"> Bem-Vindo a Pizzaria da Equipe Lantra</h1>
+        <br>
+
+        Insira quantidade de amigos: <input id="inputquantidade">
+        <br>
+
+        <br>
+        <button class="bottom" onclick="precoDaPizza()">
+            #LovePizza
+        </button>
+    </section>
+</body>
+
+</html>
+
+<script>
+
+    function precoDaPizza() {
+        let valorPizza = 35;
+
+        let quantidadeAmigos = Number(inputquantidade.value);
+        let precoFinal = valorPizza / quantidadeAmigos;
+
+        alert(`Cada um dos ${quantidadeAmigos} amigos vai pagar R$: ${precoFinal}`)
+        // FORMA ANTIGA ENSINADA PELO PROF DE ESCREVER
+        // 'Cada um dos ' + quantidadeAmigos + ' amigos vai pagar R$: ' + precoFinal
+    }
+
+</script>

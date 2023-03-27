@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND 11</title>
+</head>
+<body>
+    
+    <h1>Metrô SP</h1> <br>
+    Quantidade de passagem: <input   id="input_passagem"> <br>
+
+    <p>Valor da passagem é de 4,40</p>
+
+    
+    <button onclick="fazerCompra()">
+        Comprar</button>
+
+        <div id="resultado">
+ 
+        </div>
+</body>
+</html>
+
+<script>
+    function fazerCompra() {
+        let passagem = Number(input_passagem.value);
+        let valorPassagem = passagem * 4.40;
+
+        let descontoTres = valorPassagem * 0.97;
+        let descontoCinco = valorPassagem * 0.95;
+        let descontoSete = valorPassagem * 0.93;
+
+
+        if (passagem <= 50 && passagem >= 8) {
+            if (passagem <= 19 && passagem >= 8) {
+                resultado.innerHTML = `O valor que vc vai pagar: ${descontoTres} com desconto!`
+            } else if (passagem >= 20 && passagem <= 49) {
+                resultado.innerHTML += `O valor que vc vai pagar: ${descontoCinco} com desconto!`
+            } else if (passagem == 50) {
+                resultado.innerHTML += `O valor que vc vai: ${descontoSete} com desconto!`
+            }
+        } else {
+            resultado.innerHTML += `Quantidade inválida para o Fidelidade!`
+        }
+}
+</script>

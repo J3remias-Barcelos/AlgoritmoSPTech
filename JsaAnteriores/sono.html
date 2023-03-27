@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONO JS</title>
+
+    <link /> 
+
+    <style> 
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :root {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    font-family: "Rubik", sans-serif;
+    letter-spacing: -0.02em;
+  
+    background: linear-gradient(141deg, rgb(218, 137, 171) 20%, rgb(119, 231, 170) 98%) no-repeat,
+      fixed;
+
+    height: 100vh;
+    display: grid;
+    place-content: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: rgb(100, 96, 96);
+    text-align: center;
+  }
+  
+  section {
+    padding: 2.4rem 3.2rem;
+    border-radius: 2.2rem;
+  
+    background-color: white;
+  
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+  }
+
+.color {
+    color: rgb(61, 59, 59);
+}
+
+.inputs {
+    gap: 1.1rem;
+  }
+
+.divs {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: rgb(100, 96, 96);
+    text-align: center;
+  }
+  
+  input {
+    padding: 4px;
+    margin-left: 8px;
+    align-items: center;
+    border-radius: 0.6rem;
+    border: 2px solid #ccc;
+    font-family: "Rubik", sans-serif;
+    color: #4c4c50;
+
+}
+  
+.bottom {
+     border: 1px solid #CCCCCE;
+     border-radius: 3px;
+     box-shadow: 0 3px 0 rgba(0, 0, 0, .3),
+                   0 2px 7px rgba(0, 0, 0, 0.2);
+     color: #616165;
+     text-shadow:1px 1px 0 #FFF;
+     padding: 5px 15px;
+  }
+    </style>
+</head>
+<body>
+    
+    <div id="div_main">
+        <section>
+            <h1>
+                <div id="div_sono">Quer saber quantas Hrs você dormiu?</div>
+            </h1>
+            <br>
+
+            <input id="input_sono"> 
+            <button onclick="calcularSono()" class="bottom"> Calcular Sono! </button>
+            <br>
+
+        </section>
+    </div>
+    <br>
+
+    <div>
+        <section class="color" class="divs">
+            <div id="div_fase1">
+                <p>horas na fase 1°</p>
+            </div>
+
+            <div id="div_fase2">
+                <p>horas na fase 2°</p>
+            </div>
+
+            <div id="div_fase3">
+                <p>horas na fase 3°</p>
+            </div>
+
+            <div id="div_fase4">
+                <p> horas na fase REM</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
+
+<script>   
+    function calcularSono() {
+        let fase1 = Number(input_sono.value) * 0.05;
+        let fase2 = Number(input_sono.value) * 0.45;
+        let fase3 = Number(input_sono.value) * 0.3;
+        let fase4 = Number(input_sono.value) * 0.2;
+
+        div_sono.innerHTML = `Então você dormiu: ${Number(input_sono.value)} Hrs!`
+
+        div_fase1.innerHTML = `Você na fase 1 dormiu: ${fase1} Hrs!`
+        div_fase2.innerHTML = `Você na fase 2 dormiu: ${fase2} Hrs!`
+        div_fase3.innerHTML = `Você na fase 3 dormiu: ${fase3} Hrs!`
+        div_fase4.innerHTML = `Você na fase REM dormiu: ${fase4} Hrs!`
+        
+    }
+    
+</script>

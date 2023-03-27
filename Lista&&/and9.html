@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND 9</title>
+</head>
+<body>
+    Qual altura inicial: <input  id="input_inicial"> <br>
+    Qual altura final: <input    id="input_final"> <br>
+    Nome: <input id="input_nome"> <br>
+    Altura do Candidato: <input id="input_canditato"> <br>
+
+    <button onclick="verificarAltura()">
+        Verificar Altura
+    </button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function verificarAltura() {
+        let nomeCandidado = input_nome.value;
+        let alturaCandidato = Number(input_canditato.value);
+        let alturaInicial = Number(input_inicial.value);
+        let alturaFinal = Number(input_final.value);
+
+        if (alturaInicial > 1 && alturaFinal > alturaInicial) {
+
+            if (alturaCandidato > alturaInicial && alturaCandidato < alturaFinal) {
+                resultado.innerHTML = `O candidato ${nomeCandidado} com altura de ${alturaCandidato} participará do processo de seleção de piloto <br>`;
+            } else {
+                resultado.innerHTML += `Infelizmente o candidato ${nomeCandidado} com altura de ${alturaCandidato} não atende os requisitos <br>`;
+            }
+
+        } else {
+            resultado.innerHTML = `NÃO SEGUIR EM FRENTE! <br>`;
+        }
+    }
+</script>

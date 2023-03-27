@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND 7</title>
+</head>
+<body>
+    Login: <input id="input_login">
+    Senha: <input type="password" id="input_senha">
+
+    <button onclick="entrarLogin()">
+        Entrar
+    </button>
+
+    <div id="resultado">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function entrarLogin() {
+        let login = input_login.value;
+        let senha = input_senha.value;
+
+       if (login == "SPTech" && senha == "digital") {
+        resultado.innerHTML = `Usuário autenticado com sucesso!`
+       } else {
+        resultado.innerHTML = `Falha na autenticação!`
+       }
+    }
+</script>
