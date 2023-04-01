@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador OU 8</title>
+</head>
+<body>
+    
+    Nome da empresa:
+    <input  id="input_empresa"> <br>
+
+    Valor da bolsa:
+    <input  id="input_valorBolsa"> <br>
+
+    Valor do VR:
+    <input  id="input_vr"> <br>
+
+    Tempo de deslocamento:
+    <input  id="input_tempo"> <br>
+
+    <button  onclick="verificar()"> É preferida? </button>
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        var nomeEmpresa = input_empresa.value;
+        var valorBolsa = Number(input_valorBolsa.value);
+        var valorVR = Number(input_vr.value);
+        var tempoDeslocamento = Number(input_tempo.value);
+
+        if (valorBolsa >= 1800 || valorVR >= 20 || tempoDeslocamento <= 30) {
+            alert(`A empresa ${nomeEmpresa} é uma de suas preferências`);
+        } else {
+            alert(`A empresa ${nomeEmpresa} está fora da sua lista`);
+        }
+    }
+    
+</script>

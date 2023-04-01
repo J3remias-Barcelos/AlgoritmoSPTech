@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador 9</title>
+</head>
+<body>
+    
+    <h1>Escolha sua marca de TV</h1>
+
+    Solicite sua marca de TV:
+    <input id="input_tvs">
+
+    Preço da TV:
+    <input id="input_precoTV">
+
+    <p>
+        Samsung <br>
+        LG <br>
+        Mondial <br>
+        Britânia
+    </p>
+
+    <button onclick="analisarCompra()">
+        Analisar compra</button>
+</body>
+</html>
+
+<script>
+
+    function analisarCompra() {
+        var valorDaTV = Number(input_precoTV.value);
+        var marcaDaTV = input_tvs.value;
+
+
+        if (valorDaTV < 800 || valorDaTV > 2000) {
+            alert(`TV fora da faixa de preço`);
+            if (valorDaTV < 800) {
+                alert(`Preço baixo demais!`);
+            } else if (valorDaTV > 2000) {
+                alert(`TV cara demais, infelizmente`);
+            }
+        } 
+
+        if (valorDaTV >= 800 && valorDaTV <= 2000) {
+            if (marcaDaTV == "Mondial" || marcaDaTV == "Britânia") {
+                alert(`Na faixa de preço, porém marca não confiável`);    
+            } else if (marcaDaTV == "LG" || marcaDaTV == "Samsung") {
+                alert(`Essa TV pode entrar na sua lista!`);
+            }
+        }
+        
+    }
+</script>

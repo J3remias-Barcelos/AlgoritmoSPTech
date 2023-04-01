@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var Global 2</title>
+</head>
+<body>
+
+    salário: <!-- AONDE VOU RECEBER MEU VALOR-->
+    <input id="input_salario"> <br>
+
+    <button onclick="btn_salario()">Confirmar salário</button> <br>
+    <button onclick="btn_pagarConta100()">Pagar conta de 100</button> <br>
+    <button onclick="btn_pagarConta500()">Pagar conta de 500</button> <br>
+    <button onclick="btn_ganhouLoteria()">Ganhar 2000 na loteria</button> <br>
+
+</body>
+</html>
+
+<script >
+    var salario = 0;
+
+    function btn_salario(){
+        salario = document.getElementById("input_salario").value;
+        alert("Grana atual: R$"+salario);
+    }
+
+    function btn_pagarConta100(){
+        salario = salario - 100;
+        alert("Grana atual: R$"+salario);
+    }
+
+    function btn_pagarConta500(){
+        salario = salario - 500;
+        alert("Grana atual: R$"+salario);
+    }
+
+    function btn_ganhouLoteria(){
+        salario = salario + 2000;
+        alert("Grana atual: R$"+salario);
+    }
+
+</script>

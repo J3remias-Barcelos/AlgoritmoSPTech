@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador OU 2</title>
+</head>
+<body>
+    
+    Nota do ENEM: <input  id="input_enem"><br>
+    Nota do Vestibular interno: <input  id="input_vestibular"><br>
+
+
+    <button onclick="avaliacao()">Avaliação</button>
+</body>
+</html>
+
+<script>
+
+    function avaliacao() {
+        var notaEnem = Number(input_enem.value);
+        var notaVestibular = Number(input_vestibular.value);
+
+
+        if (notaEnem >= 800 || notaVestibular >= 700) {
+            alert(`Parabéns! Aprovado!`);
+        } else {
+            alert(`RepTente semestre que vem!`);
+        }
+    }
+</script>

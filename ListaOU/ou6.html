@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador OU 6</title>
+</head>
+
+<body>
+
+    <h1>Calculadora de cansaço do aluno SPTech</h1>
+
+    Meio de transporte:
+    <input id="input_transporte"> <br>
+
+
+    <p>
+        Ônibus <br>
+        Metrô <br>
+        Carro <br>
+        Bicicleta <br>
+        Lotação
+    </p>
+
+        <button onclick="calcularCansaco()">
+            Calcular cansaço
+        </button>
+
+        <div id="">
+
+        </div>
+</body>
+
+</html>
+
+<script> 
+    function calcularCansaco() {
+        var transporte = input_transporte.value;
+
+        if (transporte == "Carro" || transporte == "Bicicleta") {
+            alert(`Tá tranquilo...`)
+        } else if (transporte == "Ônibus" || transporte == "Lotação") {
+            alert(`Vish... vive cansado.`)
+        } else {
+            alert(`Um pouco cansado`)
+        }
+    }
+</script>

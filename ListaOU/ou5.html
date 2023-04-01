@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador OU 5</title>
+</head>
+<body>
+    
+    Temperatura: <input  id="input_temperatura">
+
+    <button onclick="analisarClima()">Analisar clima</button>
+</body>
+</html>
+
+<script>
+
+    function analisarClima() {
+        var climaAtual = Number(input_temperatura.value);
+
+        if (climaAtual < 21 || climaAtual > 24) {
+            alert(`Alerta de desconforto!`);
+
+            if (climaAtual < 21) {
+                alert(`As pessoas vão ter hipotermia!`)
+            };
+
+            if (climaAtual > 24) {
+                alert(`As pessoas vão derreter`)
+            }
+        }
+    }
+</script>

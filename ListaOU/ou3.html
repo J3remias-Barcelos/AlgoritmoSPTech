@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador OU 3</title>
+</head>
+<body>
+    Renda induvidual:
+    <input id="input_renda"> <br>
+    Renda Familiar:
+    <input id="input_familiar"> <br>
+
+    <button onclick="auxilio()">Terei o benefício</button>
+</body>
+</html>
+
+
+<script>
+
+    function auxilio() {
+        var rendaPessoa = Number(input_renda.value);
+        var rendaFamiliar = Number(input_familiar.value);
+
+        if (rendaPessoa <= 2000 || rendaFamiliar <= 3000) {
+            alert(`Você terá direito ao auxílio`);
+        } else {
+            alert(`Sem direito ao auxílio`);
+        }
+    }
+</script>
