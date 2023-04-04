@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var Global 3</title>
+</head>
+
+<body>
+
+    <h1>Var Global 2</h1>
+
+    <div id="resul_guardar">
+        <p style="color:blue">
+            Total guardado no cofrinho: R$0 <br>
+            Depósitos efetuados: 0 <br>
+            Retiradas efetuadas: 0 <br>
+        </p>
+
+        <h1>Deposite clicando nos botões</H1>
+        <div id="div_botoes">
+            <button onclick="btn_depositar()">Depositar 0,50</button> <br>
+            <button onclick="btn_depositarTwo()">Depositar 2,00</button> <br>
+            <button onclick="btn_retirar()">Retirar 0,50</button> <br>
+            <br>
+        </div>
+
+        Quanto você deseja retirar?
+        <input id="input_retirar"> <br>
+        <button onclick="btn_retirarTudo()">Retirar</button> <br>
+    </div>
+    <br>
+    <br>
+</body>
+
+</html>
+
+<script>
+    var depositos = 0;
+    var retiradas = 0;
+    var contadorDep = 0;
+    var contadorRet = 0;
+
+    function btn_depositar() {
+        depositos = depositos + 0.50;
+        contadorDep = contadorDep + 1;
+        alert(`
+            Total guardado no cofrinho: R$${depositos}
+            Depósitos efetuados: ${contadorDep}
+            Retiradas efetuadas: ${contadorRet}
+            `);
+        // resul_guardar.innerHTML =
+        //     `
+        //     Total guardado no cofrinho: R$${depositos}
+        //     Depósitos efetuados: ${contadorDep}
+        //     Retiradas efetuadas: ${contadorRet}
+        // `
+    }
+
+    function btn_depositarTwo() {
+        depositos = depositos + 2.00;
+        contadorDep = contadorDep + 1;
+        alert(`
+            Total guardado no cofrinho: R$${depositos}
+            Depósitos efetuados: ${contadorDep}
+            Retiradas efetuadas: ${contadorRet}
+            `);
+        // resul_guardar.innerHTML =
+        //     `
+        //     Total guardado no cofrinho: R$${depositos}
+        //     Depósitos efetuados: ${contadorDep}
+        //     Retiradas efetuadas: ${contadorRet}
+        // `
+        // resul_guardar.innerHTML = "Total guardado no cofrinho: R$" + depositos + "<br>" + "Depósitos efetuados: " + contadorDep + "<br>" + "Retiradas efetuadas: " + contadorRet;
+    }
+
+    function btn_retirar() {
+        depositos = depositos - 0.50;
+        contadorRet = contadorRet + 1;
+        alert(`
+            Total guardado no cofrinho: R$${depositos}
+            Depósitos efetuados: ${contadorDep}
+            Retiradas efetuadas: ${contadorRet}
+            `);
+        // resul_guardar.innerHTML =
+        //     `
+        //     Total guardado no cofrinho: R$${depositos}
+        //     Depósitos efetuados: ${contadorDep}
+        //     Retiradas efetuadas: ${contadorRet}
+        // `
+        // resul_guardar.innerHTML = "Total guardado no cofrinho: R$" + depositos + "<br>" + "Depósitos efetuados: " + contadorDep + "<br>" + "Retiradas efetuadas: " + contadorRet;
+    }
+
+    function btn_retirarTudo() {
+        var retirarInput = Number(input_retirar.value);
+
+        depositos = depositos - retirarInput;
+        contadorRet = contadorRet + 1;
+        alert(`
+            Total guardado no cofrinho: R$${depositos}
+            Depósitos efetuados: ${contadorDep}
+            Retiradas efetuadas: ${contadorRet}
+            `);
+        // resul_guardar.innerHTML =
+        //     `
+        //     Total guardado no cofrinho: R$${depositos}
+        //     Depósitos efetuados: ${contadorDep}
+        //     Retiradas efetuadas: ${contadorRet}
+        // `
+        // resul_guardar.innerHTML = "Total guardado no cofrinho: R$" + depositos + "<br>" + "Depósitos efetuados: " + contadorDep + "<br>" + "Retiradas efetuadas: " + contadorRet;
+
+
+    }
+
+
+</script>

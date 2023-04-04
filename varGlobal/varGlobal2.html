@@ -1,101 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Var Global 3</title>
+    <title>Var Global 2</title>
 </head>
-
 <body>
 
-    <h1>Var Global 2</h1>
+    salário: <!-- AONDE VOU RECEBER MEU VALOR-->
+    <input id="input_salario"> <br>
 
-    <div id="resul_guardar">
-        <p style="color:blue">
-            Total guardado no cofrinho: R$0 <br>
-            Depósitos efetuados: 0 <br>
-            Retiradas efetuadas: 0 <br>
-        </p>
+    <button onclick="btn_salario()">Confirmar salário</button> <br>
+    <button onclick="btn_pagarConta100()">Pagar conta de 100</button> <br>
+    <button onclick="btn_pagarConta500()">Pagar conta de 500</button> <br>
+    <button onclick="btn_ganhouLoteria()">Ganhar 2000 na loteria</button> <br>
 
-        <h1>Deposite clicando nos botões</H1>
-        <div id="div_botoes">
-            <button onclick="btn_depositar()">Depositar 0,50</button> <br>
-            <button onclick="btn_depositarTwo()">Depositar 2,00</button> <br>
-            <button onclick="btn_retirar()">Retirar 0,50</button> <br>
-            <br>
-        </div>
-
-        Quanto você deseja retirar?
-        <input id="input_retirar"> <br>
-        <button onclick="btn_retirarTudo()">Retirar</button> <br>
-    </div>
-    <br>
-    <br>
-
-    3) (ENTREGAR) Tio Patinhas está ensinando seus netos a guardar dinheiro; Ajude-o criando um programa em HTML/JS o
-    qual:
-    a) Exiba na tela, logo de início, na cor azul:
-    Total guardado no cofrinho: R$0
-    Depósitos efetuados: 0
-    Retiradas efetuadas: 0
-
-    b) Ao clicar num botão "Depositar 0,50", o valor depositado aumente em R$0,50 e a quantidade de depósitos aumente em
-    1. Atualize essas informações na tela;
-    c) Ao clicar num botão "Depositar 2,00", o valor depositado aumente em R$2,00 e a quantidade de depósitos aumente em
-    1. Atualize essas informações na tela;
-    d) Ao clicar num botão "Retirar 0,50" o valor depositado é diminuído em R$0,50 e a quantidade de retiradas aumenta
-    em 1. Atualize essas informações na tela;
-    e) Ao clicar num botão "Retirar" o valor depositado é diminuído de acordo com o campo "Valor", disponível na tela.
 </body>
-
 </html>
 
-<script>
-    var depositos = 0;
-    var retiradas = 0;
-    var contadorDep = 0;
-    var contadorRet = 0;
+<script >
+    var salario = 0;
 
-    function btn_depositar() {
-        depositos = depositos + 0.50;
-        resul_guardar.innerHTML = 
-        `
-        Total guardado no cofrinho: R$${depositos} <br> 
-        Depósitos efetuados ${contadorDep++} <br>
-        Retiradas efetuadas: 
-        ` + retiradas;
+    function btn_salario(){
+        salario = document.getElementById("input_salario").value;
+        alert("Grana atual: R$"+salario);
     }
 
-    function btn_depositarTwo() {
-        depositos = depositos + 2.00;
-        resul_guardar.innerHTML = 
-        `
-        Total guardado no cofrinho: R$${depositos} <br> 
-        Depósitos efetuados ${contadorDep++} <br>
-        Retiradas efetuadas: 
-        ` + retiradas;
+    function btn_pagarConta100(){
+        salario = salario - 100;
+        alert("Grana atual: R$"+salario);
     }
 
-    function btn_retirar() {
-        depositos = depositos - 0.50;
-        resul_guardar.innerHTML = 
-        `
-        Total guardado no cofrinho: R$${depositos} <br> 
-        Depósitos efetuados ${contadorDep++} <br>
-        Retiradas efetuadas: ${contadorRet++}
-        `;
+    function btn_pagarConta500(){
+        salario = salario - 500;
+        alert("Grana atual: R$"+salario);
+    }
 
-        function btn_retirarTudo() {
-            var retirarTudo = depositos - depositos;
-            resul_guardar.innerHTML = 
-            `
-            Total guardado no cofrinho: R$${retirarTudo} <br> 
-            Depósitos efetuados ${retirarTudo} <br>
-            Retiradas efetuadas: ${retirarTudo}
-            `;
-        }
+    function btn_ganhouLoteria(){
+        salario = salario + 2000;
+        alert("Grana atual: R$"+salario);
     }
 
 </script>

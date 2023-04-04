@@ -4,42 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Var Global 2</title>
+    <title>var Global 1</title>
 </head>
 <body>
 
-    salário: <!-- AONDE VOU RECEBER MEU VALOR-->
-    <input id="input_salario"> <br>
+    <h1>Var Global 1</h1>
 
-    <button onclick="btn_salario()">Confirmar salário</button> <br>
-    <button onclick="btn_pagarConta100()">Pagar conta de 100</button> <br>
-    <button onclick="btn_pagarConta500()">Pagar conta de 500</button> <br>
-    <button onclick="btn_ganhouLoteria()">Ganhar 2000 na loteria</button> <br>
-
+    <img id="img1" src="https://moodle.sptech.school/pluginfile.php/1/core_admin/logo/0x150/1643201436/bkg_01_moodle.png" width="100" height="180">
+    <br>
+    <button onclick="btn_aumentarLargura()">Aumentar a largura</button>
+    <button onclick="btn_reduzirLargura()">Reduzir a largura</button>
 </body>
 </html>
 
-<script >
-    var salario = 0;
+<script>
+    var largura = 0; 
 
-    function btn_salario(){
-        salario = document.getElementById("input_salario").value;
-        alert("Grana atual: R$"+salario);
+    function btn_aumentarLargura(){
+        largura = largura + 10;
+        img1.style.width = largura + "px";
     }
 
-    function btn_pagarConta100(){
-        salario = salario - 100;
-        alert("Grana atual: R$"+salario);
+    function btn_reduzirLargura(){
+        largura = largura - 10;
+        img1.style.width = largura + "px";
     }
-
-    function btn_pagarConta500(){
-        salario = salario - 500;
-        alert("Grana atual: R$"+salario);
-    }
-
-    function btn_ganhouLoteria(){
-        salario = salario + 2000;
-        alert("Grana atual: R$"+salario);
-    }
-
 </script>

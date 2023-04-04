@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var Global 4</title>
+</head>
+<body>
+    
+    <h1>Var Global 4</h1>
+    <br>
+    <button onclick="btn_moverEsquerda()">Mover p/ Esquerda</button>
+    <button onclick="btn_moverDireita()">Mover p/ Direita</button>
+    <input id="input_mover" placeholder="Quantos pixels">
+    <br>
+    <img id="img1" src="https://www.pinclipart.com/picdir/big/120-1207831_drawing-skateboard-bart-simpson-bart-simpson-en-skate.png" width="100" height="180">
+</body>
+</html>
+
+<script>
+        var largura = 0; 
+    
+        function btn_moverEsquerda(){
+            largura = largura - Number(input_mover.value);
+            img1.style.marginLeft = largura + "px";
+        }
+    
+        function btn_moverDireita(){
+            largura = largura + Number(input_mover.value);
+            img1.style.marginLeft = largura + "px";
+        }
+</script>
