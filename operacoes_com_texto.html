@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operações com Textos</title>
+  </head>
+  <!-- <style>
+    input {
+      text-transform: uppercase;
+    }
+  </style> -->
+  <body>
+    <h1>Operações com Textos</h1>
+    Digite uma frase:
+    <input id="input_frase" />
+    <button onclick="analisarTextos()">Analisar</button>
+    <br />
+
+    Quantidade de caracteres:
+    <b>
+      <span id="span_qtd_letras"></span>
+    </b>
+    <br />
+
+    Começa com "a"?
+    <b>
+      <span id="span_comeca_a"></span>
+    </b>
+    <br />
+
+    Começa com "e"?
+    <b>
+      <span id="span_comeca_e"></span>
+    </b>
+    <br />
+
+    Termina com ".com"?
+    <b>
+      <span id="span_termina_com"></span>
+    </b>
+    <br />
+
+    Termina com "e"?
+    <b>
+      <span id="span_termina_e"></span>
+    </b>
+    <br />
+
+    Termina com "@"?
+    <b>
+      <span id="span_termina_arroba"></span>
+    </b>
+    <br />
+
+    Primeira letra da frase:
+    <b>
+      <span id="span_primeira_letra"></span>
+    </b>
+    <br />
+
+    Terceira letra da frase:
+    <b>
+      <span id="span_terceira_letra"></span>
+    </b>
+    <br />
+
+    Última letra da frase:
+    <b>
+      <span id="span_ultima_letra"></span>
+    </b>
+    <br />
+
+    Onde está o primeiro @?
+    <b>
+      <span id="span_primeira_arroba"> </span>
+    </b>
+    <br />
+
+    Índice de "abc":
+    <b>
+      <span id="span_indice_abc"></span>
+    </b>
+    <br />
+
+    Como fica em maiúsculo (CAIXA ALTA):
+    <b>
+      <span id="span_maiusculo"></span>
+    </b>
+    <br />
+
+    Como fica em minúsculo (caixa baixa):
+    <b>
+      <span id="span_minusculo"></span>
+    </b>
+    <br />
+
+    Frase original:
+    <b>
+      <span id="span_frase_original"></span>
+    </b>
+    <br />
+
+    Frase com @ no primeiro 'a':
+    <b>
+      <span id="span_arroba_no_a"></span>
+    </b>
+    <br />
+
+    Frase sem espaços:
+    <b>
+      <span id="span_sem_espacos"></span>
+    </b>
+    <br />
+
+    Frase com 4, 5 e 3:
+    <b>
+      <span id="span_numeros"></span>
+    </b>
+  </body>
+  
+  <!-- -->
+</html>
+
+<script>
+  /**
+   * o " . " é PARA ACESSAR OS ATRIBUTOS 
+   * .length Ele lê e lista todos os caracteres da lista/frase  
+   * .startsWith para buscar o começo da Frase/lista de Caracterer com tal condição "Exemplo"
+   * .endsWith para buscar o final da Frase/lista de Caracteres com tal condição "Exemplo"
+   * .charAt método retorna o caractere no índice especificado em uma string.
+   * 
+   * indexOf é ah mesma coisa que posição, mas usamos INDEX para definir qual CARACTER apareceu em primeiro lugar e ah posição a partir dele!
+   * .toUpperCase() é para TRANSFORMAR minha FRASE EM MAIUSCULO
+   * .toLowerCase() é para transformar minha frase em minusculo
+  */
+  function analisarTextos() {
+    var frase = input_frase.value;
+
+    span_qtd_letras.innerHTML = frase.length;
+    
+    span_comeca_a.innerHTML = frase.startsWith("a"); //.startWith
+    span_comeca_e.innerHTML = frase.startsWith("e"); //.startWith
+    
+    span_termina_com.innerHTML = frase.endsWith(".com");  //.endsWith
+    span_termina_e.innerHTML = frase.endsWith("e");       //.endsWith
+    span_termina_arroba.innerHTML = frase.endsWith("@"); //.endsWith
+
+    span_primeira_letra.innerHTML = frase[0]  // .charAt(0); //.charAt é outra forma de FAZER!
+    span_terceira_letra.innerHTML = frase[2]  // .charAt(2); //.charAt = O charAt () método retorna o caractere no índice especificado em uma string.
+    span_ultima_letra.innerHTML = frase[frase.length - 1] // .charAt(frase.length - 1); // FAZEMOS ESSE CALCULO DO LENGTH MENOS 1, PARA PEGAR A ÚLTIMA POSIÇÃO da MINHA LISTA
+
+    span_primeira_arroba.innerHTML = frase.indexOf("@"); //.indexOf ele vai buscar o primeiro CARACTER e após achar vai parar
+    span_indice_abc.innerHTML = frase.indexOf("abc"); //.indexOf ele vai procurar o "abc"
+
+    span_maiusculo.innerHTML = frase.toUpperCase(); // .toUpperCase() é para TRANSFORMAR minha FRASE EM MAIUSCULO  
+    span_minusculo.innerHTML = frase.toLowerCase(); // .toLowerCase() é para transformar minha frase em minusculo
+
+    span_frase_original.innerHTML = frase;
+    span_arroba_no_a.innerHTML = frase.replace("a", "@"); // .replace é para substituir um caracter por outro, ou seja vou alterar o @ no lugar do a, sem mudar o valor
+    span_sem_espacos.innerHTML = frase.replaceAll(" ", ""); // .replace é para substituir um caracter por outro.
+    span_numeros.innerHTML = frase.replaceAll("a", "4").replaceAll("s", "5").replaceAll("e", "3"); // .replace é para substituir um caracter por outro.
+  }
+</script>

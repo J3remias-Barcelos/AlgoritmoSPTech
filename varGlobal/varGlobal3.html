@@ -14,9 +14,9 @@
 
     <div id="resul_guardar">
         <p style="color:blue">
-            Total guardado no cofrinho: R$0 <br>
-            Depósitos efetuados: 0 <br>
-            Retiradas efetuadas: 0 <br>
+            Total guardado no cofrinho: R$ <span id="span_cofre">0</span> <br>
+            Depósitos efetuados: <span id="span_depositos">0</span> <br>
+            Retiradas efetuadas: <span id="span_retiradas">0</span> <br>
         </p>
 
         <h1>Deposite clicando nos botões</H1>
@@ -24,6 +24,7 @@
             <button onclick="btn_depositar()">Depositar 0,50</button> <br>
             <button onclick="btn_depositarTwo()">Depositar 2,00</button> <br>
             <button onclick="btn_retirar()">Retirar 0,50</button> <br>
+            <button onclick="desfazer()">Desfazer</button> <br>
             <br>
         </div>
 
@@ -43,76 +44,62 @@
     var contadorDep = 0;
     var contadorRet = 0;
 
+
     function btn_depositar() {
         depositos = depositos + 0.50;
-        contadorDep = contadorDep + 1;
-        alert(`
-            Total guardado no cofrinho: R$${depositos}
-            Depósitos efetuados: ${contadorDep}
-            Retiradas efetuadas: ${contadorRet}
-            `);
-        // resul_guardar.innerHTML =
-        //     `
-        //     Total guardado no cofrinho: R$${depositos}
-        //     Depósitos efetuados: ${contadorDep}
-        //     Retiradas efetuadas: ${contadorRet}
-        // `
+        contadorDep += 1;
+
+        span_cofre.innerHTML = depositos;
+        span_depositos.innerHTML = contadorDep;
     }
 
     function btn_depositarTwo() {
         depositos = depositos + 2.00;
-        contadorDep = contadorDep + 1;
-        alert(`
-            Total guardado no cofrinho: R$${depositos}
-            Depósitos efetuados: ${contadorDep}
-            Retiradas efetuadas: ${contadorRet}
-            `);
-        // resul_guardar.innerHTML =
-        //     `
-        //     Total guardado no cofrinho: R$${depositos}
-        //     Depósitos efetuados: ${contadorDep}
-        //     Retiradas efetuadas: ${contadorRet}
-        // `
-        // resul_guardar.innerHTML = "Total guardado no cofrinho: R$" + depositos + "<br>" + "Depósitos efetuados: " + contadorDep + "<br>" + "Retiradas efetuadas: " + contadorRet;
+        contadorDep += 1;
+
+        span_cofre.innerHTML = depositos;
+        span_depositos.innerHTML = contadorDep;
     }
 
     function btn_retirar() {
         depositos = depositos - 0.50;
-        contadorRet = contadorRet + 1;
-        alert(`
-            Total guardado no cofrinho: R$${depositos}
-            Depósitos efetuados: ${contadorDep}
-            Retiradas efetuadas: ${contadorRet}
-            `);
-        // resul_guardar.innerHTML =
-        //     `
-        //     Total guardado no cofrinho: R$${depositos}
-        //     Depósitos efetuados: ${contadorDep}
-        //     Retiradas efetuadas: ${contadorRet}
-        // `
-        // resul_guardar.innerHTML = "Total guardado no cofrinho: R$" + depositos + "<br>" + "Depósitos efetuados: " + contadorDep + "<br>" + "Retiradas efetuadas: " + contadorRet;
+        contadorRet += 1;
+
+        span_cofre.innerHTML = depositos;
+        span_retiradas.innerHTML = contadorRet;
     }
 
     function btn_retirarTudo() {
-        var retirarInput = Number(input_retirar.value);
+        var retirar = input_retirar.value;
+        depositos = depositos - retirar;
+        contadorRet += 1;
 
-        depositos = depositos - retirarInput;
-        contadorRet = contadorRet + 1;
-        alert(`
-            Total guardado no cofrinho: R$${depositos}
-            Depósitos efetuados: ${contadorDep}
-            Retiradas efetuadas: ${contadorRet}
-            `);
-        // resul_guardar.innerHTML =
-        //     `
-        //     Total guardado no cofrinho: R$${depositos}
-        //     Depósitos efetuados: ${contadorDep}
-        //     Retiradas efetuadas: ${contadorRet}
-        // `
-        // resul_guardar.innerHTML = "Total guardado no cofrinho: R$" + depositos + "<br>" + "Depósitos efetuados: " + contadorDep + "<br>" + "Retiradas efetuadas: " + contadorRet;
-
-
+        span_cofre.innerHTML = depositos;
+        span_retiradas.innerHTML = contadorRet;
     }
 
+    function desfazer() {
+        var desfNumber = depositos;
 
+        if (desfNumber.len) {
+            depositos = depositos - 0.50;
+            contadorDep -= 1;
+
+            span_cofre.innerHTML = depositos;
+            span_depositos.innerHTML = contadorDep;
+        } else {
+            alert("Não há mais depósitos para desfazer");
+        }
+
+        if (desfNumber > 0) {
+            depositos = depositos - 2.00;
+            contadorDep -= 1;
+
+            span_cofre.innerHTML = depositos;
+            span_depositos.innerHTML = contadorDep;
+        } else {
+            alert("Não há mais depósitos para desfazer");
+        }
+
+    }
 </script>
