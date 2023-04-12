@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 2</title>
+</head>
+<body>
+
+    <h1>While 2</h1>
+    <button onclick="exibir()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="exibirDiv"></div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        var numero = 1;
+        while (numero <= 7) {
+            exibirDiv.innerHTML += "A matéria de Algoritmos é muito importante para o desenvolvimento de um bom programador" + "<br>";
+            numero++;
+        }
+    }
+</script>

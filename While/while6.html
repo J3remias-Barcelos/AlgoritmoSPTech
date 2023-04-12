@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 6</title>
+</head>
+<body>
+    
+    <h1>While 6</h1>
+    Nome da pessoa que mais ama na vida:
+    <input  id="nome_input">
+    <br>
+    Insira quanto você ama essa pessoa em número:
+    <input  id="numero_input">
+    <br>
+    <button onclick="exibir()">Expressar amor</button>
+    <div id="exibirDiv"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function exibir() {
+        var nome = nome_input.value;
+        var numero = Number(numero_input.value);
+        var contador = 1;
+
+        while (contador <= numero) {
+            exibirDiv.innerHTML += contador + " - " + nome + ", eu te amo! Sempre lembre disso! <br>";
+            contador++;
+        }
+    }
+</script>
