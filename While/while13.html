@@ -18,14 +18,7 @@
 
     <button onclick="exibir()">Exibir rotina mensal</button>
     <div id="exibirDiv"></div>
-
-
-    <!-- 13. Crie um programa o qual:
-
-    a) Pergunte de quantos em quantos dias o usuário faz musculação (é só uma informação, só 1 número, ok?)
-
-    b) Ao clicar em "Exibir rotina mensal", mostre uma sequência de 30 frases, como neste exemplo:
-
+    <!-- 
         Dia 1 - Musculação
 
         Dia 2 - Comer, dormir etc
@@ -44,31 +37,23 @@
 
         Dia 30 - Comer, dormir etc
 
-    O Dia 1 sempre é de "Musculação"
-
-    Considere que, nesse exemplo, o usuário informou 3 no item a) -->
+    O Dia 1 sempre é de "Musculação" -->
 </body>
 
 </html>
 
 <script>
-    
-        function exibir() {
-    
-            var diasMusculacao = Number(input_musculacao.value);
-            var contador = 1;
-            var contadorMusculacao = 1;
-    
-            while (contador <= 30) {
-    
-                if (contadorMusculacao == diasMusculacao) {
-                    contadorMusculacao = 1;
-                    exibirDiv.innerHTML += "Dia " + contador + " - Musculação <br>";
-                } else {
-                    exibirDiv.innerHTML += "Dia " + contador + " - Comer, dormir etc <br>";
-                    contadorMusculacao++;
-                }
-                contador++;
+    function exibir() {
+        var diasMusculacao = Number(input_musculacao.value);
+        var contador = 0;
+
+        while (contador < 30) { /* 30 É ah quantidade de dias que temos no mês */
+            if (contador % diasMusculacao == 0) {
+                exibirDiv.innerHTML += `Dia ${contador + 1} - Musculação <br>`;
+            } else {
+                exibirDiv.innerHTML += `Dia ${contador + 1} - Comer, dormir etc <br>`;
             }
+            contador++;
         }
+    }
 </script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeremias - ADS A</title>
+
+    <link rel="stylesheet" href="naruto.png">
+</head>
+<body>
+    <h1>Programa criação de Clones</h1>
+
+    Quantidade de energia que o Naruto tem:
+    <input id="input_energia"> <br>
+
+    Quantidade de clones desejada:
+    <input id="input_clones"> <br>
+
+    Quantidade de clones por linha:
+    <input id="input_clones_linha"> <br>
+
+    <button onclick="criarClones()">Criar Clones</button>
+    <br>
+
+    <div id="exibirDiv">
+    </div>
+</body>
+</html>
+<script>
+    function criarClones() {
+        var energia = Number(input_energia.value); // RECEBENDO VALORES DA MINHA INPUT
+        var clones = Number(input_clones.value);    // RECEBENDO VALORES DA MINHA INPUT
+        var clones_linha = Number(input_clones_linha.value);    // RECEBENDO VALORES DA MINHA INPUT
+
+        var sobra_energia = energia - (clones * 20); // Calculos para o Percentual Futuro.
+        var percentual_sobra = (sobra_energia / energia) * 100; // Calculos para o Percentual Futuro.
+
+        var contadorI = 0; // Váriavel de Controle - Contador para meu laço WHILE
+
+        // AQUI É MINHA VALIDAÇÕES QUE FAÇO ANTES DE EXIBIR O PROGRAMA 
+        if (energia < 20 || energia > 5000) {
+            alert("ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000.");
+        } else if (clones < 0 || clones > 250) {
+            alert("ERRO NA ENTRADA DE DADOS – Quantidade de Clones tem que ser entre 0 e 250.");
+        } else if (clones_linha == 0 || clones_linha < 0) {
+            alert("ERRO NA ENTRADA DE DADOS – Quantidade de Clones por linha tem que ser maior que 0");
+
+        } else if (energia <= (clones * 20)) {
+            alert("OFF - Você não tem energia o suficiente para crir Clones!");
+        } else {
+
+            // AQUI ENTRA MEU LAÇO DE REPETIÇÃO - WHILE
+            while (contadorI <= clones) {
+            if (contadorI < clones_linha) {
+                exibirDiv.innerHTML += "<img src='naruto.png' width='100px' height='100px'>";
+                contadorI++;
+            } 
+            else {
+                exibirDiv.innerHTML += 
+                `
+                <br>
+                <b>ANÁLISE DA GERAÇÃO DE CLONES <b> <br>
+
+                Energia Inicial:${energia}  <br>
+
+                Qtde de Clones:${clones}    <br>
+
+                Sobra de Energia:${sobra_energia} <br>
+                `;
+                contadorI++;
+                // ABAIXO DO ITEM ANTERIOR - OU SEJA DENTRO DO ELSE & WHILE 
+            if (sobra_energia > 1000 || clones > 50 && percentual_sobra >= 20) {
+                exibirDiv.innerHTML += `<br> PROVAVELMENTE VOCE VAI GANHAR <br>`;
+            } else if (sobra_energia > 500 || clones >= 20 && clones <= 50 && percentual_sobra >= 10) {
+                exibirDiv.innerHTML += `<br> A LUTA VAI SER MUITO BOA <br>`;
+            } else {
+                exibirDiv.innerHTML += `<br> TORÇA PARA O ADVERSÁRIO SER FRAQUINHO <br>`;
+            }
+            }
+        }
+        }
+    }
+</script>
