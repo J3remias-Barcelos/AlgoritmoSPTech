@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For 4</title>
+</head>
+<body>
+    
+    <h1>For 4</h1>
+    <button onclick="exibir()">S2 Pares</button>
+    <div id="exibirDiv"></div>
+</body>
+</html>
+
+<script>
+
+    function exibir() {
+        for (var numero = 0; numero <= 100; numero += 2) {
+            exibirDiv.innerHTML += numero + "<br>";
+        }
+    }
+</script>

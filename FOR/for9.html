@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For 9</title>
+</head>
+<body>
+
+    <h1>For 9</h1>
+
+    Insira um número:
+    <input id="input_numero">
+    <br>
+
+    Insira uma frase:
+    <input id="input_frase">
+    <br>
+
+    <button onclick="exibir()">Papagaio</button>
+    <div id="exibirDiv"></div>
+<!-- a) Pergunte ao usuário um número;
+
+b) Pergunte ao usuário uma frase.
+
+c) Ao clicar num botão "Papagaio", a frase é exibida N vezes em N alerts, onde N é o número informado em a)  -->
+</body>
+</html>
+
+<script>
+    function exibir() {
+        var numeroUsuario = Number(input_numero.value);
+        var fraseUsuario = input_frase.value;
+
+        for (var numero = 0; numero <= numeroUsuario; numero++) {
+            // exibirDiv.innerHTML += `${numero}. - ${fraseUsuario} <br>`;
+            alert(`Sua frase: ${fraseUsuario} <br>`)
+        }
+    }
+</script>

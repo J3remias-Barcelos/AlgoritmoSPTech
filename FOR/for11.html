@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For 11</title>
+</head>
+<body>
+    <h1>For 11</h1>
+
+    Quantas voltas você quer andar de carro:
+    <input
+    id="input_voltas">
+    <br>
+    <button onclick="exibir()">Iniciar corrida!</button>
+    <div id="exibirDiv"></div>
+</body>
+</html>
+
+<script>
+        function exibir() {
+            var voltasUsuario = Number(input_voltas.value);
+            for (var voltas = 0; voltas <= voltasUsuario; voltas++) {
+                exibirDiv.innerHTML += `Carro dando a ${voltas}ª volta <br>`;
+            } 
+            exibirDiv.innerHTML += `Corrida finalizada!`;
+        }
+</script>

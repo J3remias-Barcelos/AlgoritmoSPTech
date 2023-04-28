@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For 13</title>
+</head>
+
+<body>
+
+    <h1>For 13</h1>
+
+    Quantos dias você fez Musculação:
+    <input id="input_musculacao">
+    <br>
+
+    <button onclick="exibir()">Exibir rotina mensal</button>
+    <div id="exibirDiv"></div>
+    <!-- 
+        Dia 1 - Musculação
+
+        Dia 2 - Comer, dormir etc
+
+        Dia 3 - Comer, dormir etc
+
+        Dia 4 - Musculação
+
+        Dia 5 - Comer, dormir etc
+
+        Dia 6 - Comer, dormir etc
+
+        Dia 7 - Musculação
+
+        ...
+
+        Dia 30 - Comer, dormir etc
+
+    O Dia 1 sempre é de "Musculação" -->
+</body>
+
+</html>
+
+<script>
+    function exibir() {
+        var diasMusculacao = Number(input_musculacao.value);
+        
+
+        for (var contador = 0; contador < 30; contador++) { /* 30 É ah quantidade de dias que temos no mês */
+            if (contador % diasMusculacao == 0) {
+                exibirDiv.innerHTML += `Dia ${contador + 1} - Musculação <br>`;
+            } else {
+                exibirDiv.innerHTML += `Dia ${contador + 1} - Comer, dormir etc <br>`;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For 5</title>
+</head>
+<body>
+    
+    <h1>For 5</h1>
+    <button onclick="exibir()">Números cabalísticos</button>
+    <div id="exibirDiv"></div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        for (var numero = 1; numero <= 30; numero++) {
+            if (numero != 3 && numero != 4 && numero != 7 && numero != 10 && numero != 12) {
+                exibirDiv.innerHTML += numero + "<br>";
+            }
+        }
+    }
+</script>

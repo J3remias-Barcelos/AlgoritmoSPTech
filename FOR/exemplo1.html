@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Usando For</h1>
+    <button onclick="contar()">Contar</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+
+<script>
+    // NO WHILE PRECISAMOS DE TRÊS COISAS PARA FUNCIONAR
+    // 1 - CONDIÇÃO D INÍCIO E PARADA
+    // 3 - CONTEÚDO - OU SEJA CONTADOR
+    // 2 - INCREMENTO ATÉ CHEGAR NA PARADA 
+
+    function contar() {
+        for (let i = 1; i <= 15; i++) {
+        div_exibir.innerHTML += `${i} <br>`
+    }
+    div_exibir.innerHTML += `Finalizou em: ${i} <br>`
+}
+</script>

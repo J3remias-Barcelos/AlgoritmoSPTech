@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For 3</title>
+</head>
+<body>
+    <h1>For 3</h1>
+    <button onclick="exibir()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="exibirDiv"></div>
+
+</body>
+</html>
+
+<script>
+    function exibir() {
+        for (var numero = 1; numero <= 7; numero++) {
+            exibirDiv.innerHTML += `${numero}. Boa Tarde - Algoritmo é Vida! <br>`;
+        }
+    }
+</script>

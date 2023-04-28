@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For 15</title>
+</head>
+
+<body>
+
+    <h1>For 15</h1>
+    <p>No filme clássico "Ghost, do outra lado da vida", o protagonista, para atazanar a vida da médium canta a seguinte
+        canção...</p>
+
+    Insira a quantidade de Elefantes:
+    <input id="input_elefante">
+    <br>
+    <button onclick="atazanar()">Atazanar a médium</button>
+    <div id="exibirDiv"></div>
+    <!-- 
+    5. No filme clássico "Ghost, do outra lado da vida", o protagonista, para atazanar a vida da médium canta a seguinte canção... 
+1 elefante incomoda muita gente! 
+
+2 elefantes, incomodam, incomodam, muito mais! 
+
+1 elefante incomoda muita gente! 
+
+3 elefantes, incomodam, incomodam, incomodam, muito mais! 
+
+1 elefante incomoda muita gente! 
+
+4 elefantes, incomodam, incomodam, incomodam, incomodam, muito mais! 
+
+... e assim por diante 
+
+Crie um programa o qual: 
+
+a) Solicite ao usuário a quantidade elefantes;
+
+b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante, seguido do trecho com 2 elefantes e depois 3... até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade. 
+
+Por exemplo, o se o usuário informar 4 em a), devem aparecer 3 estrofes, como no enunciado da questão, de "2 elefantes" até "4 elefantes"  -->
+</body>
+
+</html>
+<script>
+    function atazanar() {
+        var numeroElefante = Number(input_elefante.value); // NÚMERO QUE O USUARIO preencheu na INPUT;
+         // Número estabelecido para controle dos ELEFANTES;
+        var fraseIncomada = "incomodam, ";
+
+        for (var elefanteContador = 0; elefanteContador <= numeroElefante; elefanteContador++) {
+            fraseIncomada = fraseIncomada + "incomodam, ";
+            
+            if (elefanteContador == 1) {
+                exibirDiv.innerHTML += `<br> 1 elefante incomoda muita gente! <br> ${elefanteContador} elefantes incomodam, muito mais!`
+            } else {
+                exibirDiv.innerHTML += `<br> 1 elefante incomoda muita gente! <br> ${elefanteContador} elefantes ${fraseIncomada} muito mais!`
+            }
+        }
+    }
+</script>
