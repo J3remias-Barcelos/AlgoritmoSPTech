@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor 01</title>
+</head>
+<body>
+    
+
+    Fruta: <input  id="input_fruta">
+
+    <button onclick="adicionar()">Adicionar</button>
+
+    <div id="div_fruta"></div>
+</body>
+</html>
+
+<script>
+    var listaFruta = [];
+
+    function adicionar() {
+        var fruta = input_fruta.value;
+
+        input_fruta.value = "";
+
+        listaFruta.push(fruta);
+        
+        div_fruta.innerHTML = 
+        `
+        Primeira Fruta:     ${listaFruta[0]}    <br>
+        Última Fruta:       ${listaFruta[ listaFruta.length - 1 ]}    <br>
+        Lista das Frutas: <br>
+        `;
+
+        for(var i = 0; i < listaFruta.length; i++) {
+            var frutaAtual = listaFruta[i];
+            console.log(frutaAtual);
+
+            div_fruta.innerHTML += `<div>${i + 1} - ${frutaAtual.toUpperCase()}</div>`
+        }
+    }
+
+     // var contador = 0;
+        // while (contador < listaFruta.length) {
+        //     var frutaAtual = listaFruta[contador];
+        //     console.log(frutaAtual);
+
+        //     div_fruta.innerHTML += 
+        //     `
+        //     <div>${frutaAtual}</div>
+        //     `
+        //     contador++
+        // }
+</script>

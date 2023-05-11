@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor 04</title>
+</head>
+<body>
+
+    Cadastrar filme: <input  id="input_filme"> <br>
+    <button onclick="cadastrarFilme()">Cadastrar Filmes</button>
+
+    <button onclick="verificarFavoritos()">Ver Favoritos</button>
+
+    <div id="div_exibir">
+
+    </div>
+<!-- 
+    Para ir cadastrando cada filme, ele clica em "Cadastrar filme". 
+
+    Crie um botão "Ver Favoritos". Ao clicar ele, exiba os filmes favoritos, abaixo, uma frase "Total: X". 
+
+    Abaixo, mostra essas frases: 
+
+    O que mais gosta é A 
+
+    E desses, o que menos gosta é B 
+
+    Onde A é o primeiro cadastrado e B, o último  -->
+        
+</body>
+</html>
+<script>
+    listaFilmes = [];
+
+    function cadastrarFilme() {
+        var filme = input_filme.value; 
+        
+        input_filme.value = "";
+
+        listaFilmes.push(filme);
+        console.log(listaFilmes);
+    }
+
+
+    function verificarFavoritos() {
+        if (listaFilmes.length > 0) {
+            var ultimoFilme = listaFilmes[listaFilmes.length - 1];
+            var primeiroFilme = listaFilmes[0];
+            var total = listaFilmes;
+
+            div_exibir.innerHTML = 
+            `
+            O que mais gosta é ${primeiroFilme}. <br>
+            E desses, o que menos gosta é o ${ultimoFilme}. <br>
+            Total: ${total.length}. <br>
+            `;
+        }
+    }
+</script>
