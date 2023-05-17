@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 3</title>
+</head>
+<body>
+<h1>Math 3</h1>
+
+<button onclick="sortear()">Jogar</button>
+
+<div id="exibir"> </div>
+
+</body>
+</html>
+
+<script>
+
+    var pedra = 'https://th.bing.com/th/id/OIP.XHhkmZr8sNkhh3nWgXtOFwHaHa?w=184&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var papel = 'https://th.bing.com/th/id/OIP.ec9VpP9THYlXIH70gYO0vAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var tesoura = 'https://th.bing.com/th/id/OIP.9YoxSH4ErSoA0m_IF4Bx-wHaE7?w=294&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+
+    var lista = [pedra, papel, tesoura];
+
+    function sortear() {
+        var numero = parseInt(Math.random() * lista.length);
+
+        if (lista.length > 0 ) {
+            exibir.innerHTML = 
+            ` <img src="${lista[numero]}" alt="Imagem Sorteada" style="width: 200px; height: 200px;">`
+            // lista.splice(numero, 1);
+
+        } else {
+            exibir.innerHTML += `Oops acabou as imagens`
+        }
+};
+</script>

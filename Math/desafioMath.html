@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 01</title>
+</head>
+<body>
+    <button id="sortearImagem">Sortear imagem</button>
+    <div id="exibirImagem">
+    </div>
+</body>
+</html>
+
+<script>
+    var img1 = 'https://th.bing.com/th/id/OIP.hpriUaMMbTE148SESm9WyQHaDL?w=340&h=149&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var img2 = 'https://th.bing.com/th/id/OIP.7Nm9vD9JnRtgQkuYutRODwHaE8?w=249&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var img3 = 'https://th.bing.com/th/id/OIP.HCWCJoY9Rf70_GBqd1IuwgHaE8?w=248&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var img4 = 'https://th.bing.com/th/id/OIP.DKHk12Vc-qf_GwHY603WiQHaE8?w=242&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var img5 = 'https://th.bing.com/th/id/OIP.GSP20yKyWpKvqNekNiyiawHaEK?w=285&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+
+    var lista = [img1, img2, img3, img4, img5];
+
+    sortearImagem.onclick = () => {
+        var numero = parseInt(Math.random() * lista.length);
+
+        if (lista.length > 0 ) {
+            exibirImagem.innerHTML = 
+            ` <img src="${lista[numero]}" alt="Imagem Sorteada"> `
+            lista.splice(numero, 1);
+
+        } else {
+            exibirImagem.innerHTML += `Oops acabou as imagens`
+        }
+    };
+</script>

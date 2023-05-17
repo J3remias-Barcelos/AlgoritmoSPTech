@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 5</title>
+</head>
+<body>
+
+<h1>Math 5</h1>
+
+<button onclick="jogar()">Jogar</button>
+
+<div id="exibir"> </div>
+
+<!-- 5) Crie um programa que simule 2 pessoas jogando "pedra papel tesoura". 
+a)  Deve haver apenas um botão "Jogar". Ao clicar nele, devem ser sorteados um dos 3 valores possíveis do jogo para 2 jogadores. 
+b) Os valores sorteados são ilustrados na tela com imagens (de uma pedra, de um papel ou de uma tesoura, claro). Essas imagens devem aparecer abaixo do botão e uma do lado da outra. Se possível, evite que a imagens fiquem "coladas", dando um espaço entre elas. 
+c) Abaixo das imagens, caso os valores não sejam iguais, exiba a frase 
+Jogador X venceu porque BLA 
+
+Onde X é 1 ou 2, dependendo do jogador que vencer e BLA é a explicação, que pode ser: 
+   Pedra quebra a tesoura 
+   Papel cobre a pedra 
+   Tesoura corta o papel  -->
+</body>
+</html>
+
+<script>
+
+    var pedra = 'https://th.bing.com/th/id/OIP.XHhkmZr8sNkhh3nWgXtOFwHaHa?w=184&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var papel = 'https://th.bing.com/th/id/OIP.ec9VpP9THYlXIH70gYO0vAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+    var tesoura = 'https://th.bing.com/th/id/OIP.9YoxSH4ErSoA0m_IF4Bx-wHaE7?w=294&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+
+    var lista = [pedra, papel, tesoura];
+
+    function jogar() {
+        var jogador1 = parseInt(Math.random() * 3);
+        var jogador2 = parseInt(Math.random() * 3);
+        var jogador1_escolhido = lista[jogador1];
+        var jogador2_escolhido = lista[jogador2];
+
+        if (lista.length > 0) {
+            exibir.innerHTML = 
+            `
+            <img src="${jogador1_escolhido}" alt="Imagem Sorteada" style="width: 200px; height: 200px; margin: 15px">
+            <img src="${jogador2_escolhido}" alt="Imagem Sorteada" style="width: 200px; height: 200px; margin: 15px"> <br>
+            `
+            // lista.splice(numero, 1);
+
+            if (jogador1_escolhido == jogador2_escolhido) {
+                exibir.innerHTML += `Empate`
+            } else if (jogador1_escolhido == pedra && jogador2_escolhido == tesoura) {
+                exibir.innerHTML += `Jogador 1 venceu porque Pedra quebra a tesoura`
+            } else if (jogador1_escolhido == papel && jogador2_escolhido == pedra) {
+                exibir.innerHTML += `Jogador 1 venceu porque Papel cobre a pedra`
+            } else if (jogador1_escolhido == tesoura && jogador2_escolhido == papel) {
+                exibir.innerHTML += `Jogador 1 venceu porque Tesoura corta o papel`
+            } else if (jogador2_escolhido == pedra && jogador1_escolhido == tesoura) {
+                exibir.innerHTML += `Jogador 2 venceu porque Pedra quebra a tesoura`
+            } else if (jogador2_escolhido == papel && jogador1_escolhido == pedra) {
+                exibir.innerHTML += `Jogador 2 venceu porque Papel cobre a pedra`
+            } else if (jogador2_escolhido == tesoura && jogador1_escolhido == papel) {
+                exibir.innerHTML += `Jogador 2 venceu porque Tesoura corta o papel`
+            }
+        }
+    }
+</script>
